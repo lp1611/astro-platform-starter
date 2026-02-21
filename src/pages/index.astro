@@ -1,19 +1,100 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="Home">
+    <!-- Hero / Introduction -->
+    <section class="mb-12">
+        <div class="flex flex-col sm:flex-row gap-8 items-start">
+            <div class="shrink-0">
+                <div class="w-40 h-40 rounded-full bg-surface-alt border-2 border-border flex items-center justify-center text-5xl font-bold text-primary select-none">
+                    LP
+                </div>
+            </div>
+            <div>
+                <h1 class="mb-2">Lekha Patel</h1>
+                <p class="text-lg text-text-muted mb-4">Researcher &amp; Scientist</p>
+                <p class="text-text leading-relaxed mb-4">
+                    Welcome to my academic website. I am a researcher with broad interests spanning
+                    applied mathematics, computational science, and data-driven methods. My work focuses
+                    on developing novel algorithms and theoretical frameworks that bridge mathematical
+                    theory and practical applications.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="mailto:lekha.patel@example.com" class="btn">Contact Me</a>
+                    <a href="/publications" class="btn-outline">View Publications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="mb-12">
+        <h2 class="section-heading">Research Interests</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="card">
+                <h3 class="mb-2">Computational Methods</h3>
+                <p class="text-text-muted text-sm">Developing efficient numerical algorithms for solving large-scale problems in science and engineering.</p>
+            </div>
+            <div class="card">
+                <h3 class="mb-2">Applied Mathematics</h3>
+                <p class="text-text-muted text-sm">Bridging mathematical theory and real-world applications through modeling and analysis.</p>
+            </div>
+            <div class="card">
+                <h3 class="mb-2">Data-Driven Science</h3>
+                <p class="text-text-muted text-sm">Leveraging machine learning and statistical methods for scientific discovery and decision-making.</p>
+            </div>
+            <div class="card">
+                <h3 class="mb-2">Signal Processing</h3>
+                <p class="text-text-muted text-sm">Designing algorithms for extracting meaningful information from complex, noisy data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-12">
+        <h2 class="section-heading">Education</h2>
+        <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <div>
+                    <p class="font-semibold text-text">Ph.D. in Applied Mathematics</p>
+                    <p class="text-text-muted text-sm">University Name</p>
+                </div>
+                <p class="text-text-muted text-sm shrink-0">2015 &ndash; 2020</p>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <div>
+                    <p class="font-semibold text-text">M.Sc. in Mathematics</p>
+                    <p class="text-text-muted text-sm">University Name</p>
+                </div>
+                <p class="text-text-muted text-sm shrink-0">2013 &ndash; 2015</p>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <div>
+                    <p class="font-semibold text-text">B.Sc. in Mathematics</p>
+                    <p class="text-text-muted text-sm">University Name</p>
+                </div>
+                <p class="text-text-muted text-sm shrink-0">2009 &ndash; 2013</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent News -->
+    <section class="mb-12">
+        <h2 class="section-heading">Recent News</h2>
+        <ul class="space-y-3">
+            <li class="flex gap-3 items-start">
+                <span class="tag shrink-0">2026</span>
+                <p class="text-text text-sm">Invited talk at the International Conference on Computational Science.</p>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="tag shrink-0">2025</span>
+                <p class="text-text text-sm">New paper accepted at the Journal of Applied Mathematics.</p>
+            </li>
+            <li class="flex gap-3 items-start">
+                <span class="tag shrink-0">2025</span>
+                <p class="text-text text-sm">Received a research grant for work on data-driven computational methods.</p>
+            </li>
+        </ul>
+    </section>
 </Layout>
