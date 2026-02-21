@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const publications = [
+    {
+        year: 2025,
+        entries: [
+            {
+                title: 'A Scalable Framework for Data-Driven Computational Modeling',
+                authors: 'L. Patel, A. Kumar, M. Chen',
+                venue: 'Journal of Applied Mathematics, vol. 42, no. 3, pp. 215-234',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Preprint', url: '#' },
+                ],
+            },
+            {
+                title: 'Convergence Analysis of Iterative Methods for Large-Scale Inverse Problems',
+                authors: 'L. Patel, R. Thompson',
+                venue: 'SIAM Journal on Scientific Computing, vol. 47, no. 1, pp. 89-112',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Code', url: '#' },
+                ],
+            },
+        ],
+    },
+    {
+        year: 2024,
+        entries: [
+            {
+                title: 'Efficient Signal Recovery from Noisy Measurements Using Sparse Representations',
+                authors: 'L. Patel, J. Nakamura, S. Gupta',
+                venue: 'IEEE Transactions on Signal Processing, vol. 72, pp. 1540-1555',
+                links: [
+                    { label: 'Paper', url: '#' },
+                ],
+            },
+            {
+                title: 'Adaptive Mesh Refinement for Nonlinear Partial Differential Equations',
+                authors: 'L. Patel, D. Wilson',
+                venue: 'Proceedings of the International Conference on Computational Methods (ICCM 2024), pp. 102-117',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Slides', url: '#' },
+                ],
+            },
+            {
+                title: 'A Bayesian Approach to Uncertainty Quantification in Physical Simulations',
+                authors: 'M. Chen, L. Patel',
+                venue: 'Journal of Computational Physics, vol. 501, 112782',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Preprint', url: '#' },
+                    { label: 'Code', url: '#' },
+                ],
+            },
+        ],
+    },
+    {
+        year: 2023,
+        entries: [
+            {
+                title: 'Deep Learning for Accelerated Numerical Simulation of Fluid Dynamics',
+                authors: 'L. Patel, A. Kumar',
+                venue: 'NeurIPS 2023 Workshop on Machine Learning and the Physical Sciences',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Poster', url: '#' },
+                ],
+            },
+            {
+                title: 'Randomized Algorithms for Low-Rank Matrix Approximation: Theory and Practice',
+                authors: 'L. Patel',
+                venue: 'Linear Algebra and its Applications, vol. 678, pp. 45-72',
+                links: [
+                    { label: 'Paper', url: '#' },
+                ],
+            },
+        ],
+    },
+    {
+        year: 2022,
+        entries: [
+            {
+                title: 'Compressed Sensing with Structured Random Matrices',
+                authors: 'L. Patel, R. Thompson, J. Nakamura',
+                venue: 'Applied and Computational Harmonic Analysis, vol. 58, pp. 134-162',
+                links: [
+                    { label: 'Paper', url: '#' },
+                    { label: 'Code', url: '#' },
+                ],
+            },
+            {
+                title: 'Optimization Methods for Inverse Problems in Imaging',
+                authors: 'L. Patel, S. Gupta',
+                venue: 'Inverse Problems, vol. 38, no. 7, 075001',
+                links: [
+                    { label: 'Paper', url: '#' },
+                ],
+            },
+        ],
+    },
+];
+---
+
+<Layout title="Publications" description="Selected publications by Lekha Patel.">
+    <h1 class="mb-4">Publications</h1>
+    <p class="text-text-muted mb-10">
+        Below is a selected list of publications. For a complete list, please visit my
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile.
+    </p>
+
+    {publications.map((group) => (
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-accent mb-4 flex items-center gap-3">
+                <span>{group.year}</span>
+                <span class="h-px bg-border grow"></span>
+            </h2>
+            <div>
+                {group.entries.map((pub) => (
+                    <div class="pub-entry">
+                        <p class="pub-title">{pub.title}</p>
+                        <p class="pub-authors">{pub.authors}</p>
+                        <p class="pub-venue">{pub.venue}</p>
+                        {pub.links && pub.links.length > 0 && (
+                            <div class="pub-links">
+                                {pub.links.map((link) => (
+                                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                        [{link.label}]
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </section>
+    ))}
+</Layout>
