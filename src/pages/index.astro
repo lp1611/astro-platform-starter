@@ -7,21 +7,20 @@ import Layout from '../layouts/Layout.astro';
     <section class="mb-12">
         <div class="flex flex-col sm:flex-row gap-8 items-start">
             <div class="shrink-0">
-                <div class="w-40 h-40 rounded-full bg-surface-alt border-2 border-border flex items-center justify-center text-5xl font-bold text-primary select-none">
-                    LP
-                </div>
+                <img
+                    src="/images/lekha-patel.jpg"
+                    alt="Lekha Patel"
+                    class="w-40 h-40 rounded-full object-cover border-2 border-border"
+                />
             </div>
             <div>
                 <h1 class="mb-2">Lekha Patel</h1>
                 <p class="text-lg text-text-muted mb-4">Researcher &amp; Scientist</p>
                 <p class="text-text leading-relaxed mb-4">
-                    Welcome to my academic website. I am a researcher with broad interests spanning
-                    applied mathematics, computational science, and data-driven methods. My work focuses
-                    on developing novel algorithms and theoretical frameworks that bridge mathematical
-                    theory and practical applications.
+                    I am a mathematician and computational statistician whose research sits at the interface of statistical learning and scientific machine learning (SciML). I develop probabilistic, physics-informed methods for learning stochastic processes from observed data, with a focus on uncertainty-aware modeling of spatiotemporal dynamics and mechanisms that bridge scales. Methodologically, I draw on stochastic geometry, Bayesian nonparametric modeling, representation/manifold learning, and Bayesian variable selection. My early work focused on stochastic geometry for biological applications; at Sandia, my research has expanded toward physics-informed statistical learning for high-consequence scientific and engineering systems. Application areas include atmospheric science and climatology, cybersecurity, bioinformatics, and related data-driven studies of complex systems.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="mailto:lekha.patel@example.com" class="btn">Contact Me</a>
+                    <a href="mailto:lpatel@sandia.gov" class="btn">Contact Me</a>
                     <a href="/publications" class="btn-outline">View Publications</a>
                 </div>
             </div>
@@ -33,20 +32,20 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="section-heading">Research Interests</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="card">
-                <h3 class="mb-2">Computational Methods</h3>
-                <p class="text-text-muted text-sm">Developing efficient numerical algorithms for solving large-scale problems in science and engineering.</p>
+                <h3 class="mb-2">Probabilistic SciML &amp; Physics-Informed Learning</h3>
+                <p class="text-text-muted text-sm">Statistical learning of stochastic dynamical systems with physical constraints and uncertainty quantification.</p>
             </div>
             <div class="card">
-                <h3 class="mb-2">Applied Mathematics</h3>
-                <p class="text-text-muted text-sm">Bridging mathematical theory and real-world applications through modeling and analysis.</p>
+                <h3 class="mb-2">Simulation-Based Inference &amp; Generative Models</h3>
+                <p class="text-text-muted text-sm">Inference for complex simulators (diffusion/flow models, optimal transport) for complex/intractable likelihoods.</p>
             </div>
             <div class="card">
-                <h3 class="mb-2">Data-Driven Science</h3>
-                <p class="text-text-muted text-sm">Leveraging machine learning and statistical methods for scientific discovery and decision-making.</p>
+                <h3 class="mb-2">Stochastic Geometry &amp; Spatiotemporal Statistics</h3>
+                <p class="text-text-muted text-sm">Modeling, filtering, and prediction for noisy, partial observations in time and space; multiscale and irregular data.</p>
             </div>
             <div class="card">
-                <h3 class="mb-2">Signal Processing</h3>
-                <p class="text-text-muted text-sm">Designing algorithms for extracting meaningful information from complex, noisy data.</p>
+                <h3 class="mb-2">Bayesian Nonparametrics &amp; Representation Learning</h3>
+                <p class="text-text-muted text-sm">Flexible priors (e.g., DP/GP-style ideas), manifold/representation learning, and variable selection for scientific data.</p>
             </div>
         </div>
     </section>
@@ -57,44 +56,18 @@ import Layout from '../layouts/Layout.astro';
         <div class="space-y-4">
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
                 <div>
-                    <p class="font-semibold text-text">Ph.D. in Applied Mathematics</p>
-                    <p class="text-text-muted text-sm">University Name</p>
+                    <p class="font-semibold text-text">PhD, Mathematics (Department of Statistics)</p>
+                    <p class="text-text-muted text-sm">Imperial College London</p>
                 </div>
-                <p class="text-text-muted text-sm shrink-0">2015 &ndash; 2020</p>
+                <p class="text-text-muted text-sm shrink-0">2015 &ndash; 2019</p>
             </div>
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
                 <div>
-                    <p class="font-semibold text-text">M.Sc. in Mathematics</p>
-                    <p class="text-text-muted text-sm">University Name</p>
+                    <p class="font-semibold text-text">MSci, Mathematics</p>
+                    <p class="text-text-muted text-sm">Imperial College London</p>
                 </div>
-                <p class="text-text-muted text-sm shrink-0">2013 &ndash; 2015</p>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <div>
-                    <p class="font-semibold text-text">B.Sc. in Mathematics</p>
-                    <p class="text-text-muted text-sm">University Name</p>
-                </div>
-                <p class="text-text-muted text-sm shrink-0">2009 &ndash; 2013</p>
+                <p class="text-text-muted text-sm shrink-0">2011 &ndash; 2015</p>
             </div>
         </div>
-    </section>
-
-    <!-- Recent News -->
-    <section class="mb-12">
-        <h2 class="section-heading">Recent News</h2>
-        <ul class="space-y-3">
-            <li class="flex gap-3 items-start">
-                <span class="tag shrink-0">2026</span>
-                <p class="text-text text-sm">Invited talk at the International Conference on Computational Science.</p>
-            </li>
-            <li class="flex gap-3 items-start">
-                <span class="tag shrink-0">2025</span>
-                <p class="text-text text-sm">New paper accepted at the Journal of Applied Mathematics.</p>
-            </li>
-            <li class="flex gap-3 items-start">
-                <span class="tag shrink-0">2025</span>
-                <p class="text-text text-sm">Received a research grant for work on data-driven computational methods.</p>
-            </li>
-        </ul>
     </section>
 </Layout>

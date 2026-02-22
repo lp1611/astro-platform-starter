@@ -1,140 +1,394 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const publications = [
+const sections = [
     {
-        year: 2025,
+        title: '1. Probabilistic SciML & Physics-Informed Stochastic Modeling',
         entries: [
             {
-                title: 'A Scalable Framework for Data-Driven Computational Modeling',
-                authors: 'L. Patel, A. Kumar, M. Chen',
-                venue: 'Journal of Applied Mathematics, vol. 42, no. 3, pp. 215-234',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Preprint', url: '#' },
+                title: 'Exploring ship track spreading rates with a physics-informed Langevin particle parameterization',
+                authors: 'L.A. McMichael, M.J. Schmidt, R. Wood, P.N. Blossey, L. Patel',
+                venue: 'Geoscientific Model Development, 17(21), 7867–7888',
+                year: 2024,
+                type: 'Journal',
+                url: 'https://gmd.copernicus.org/articles/17/7867/2024/',
+            },
+            {
+                title: 'Pluminate: Quantifying aerosol injection behavior from simulation, experimentation and observations',
+                authors: 'L. Patel, J.W. Foulk, C.A. Pattyn, P. Warburton, K. Shuler, L. McMichael, P. Blossey, M.J. Schmidt, E.L. Roesler, K. Mondragon, A.L. Sanchez, J.B. Wright, R. Wood',
+                venue: 'Sandia National Laboratories',
+                year: 2023,
+                type: 'Tech report',
+                url: 'https://www.osti.gov/servlets/purl/2430132',
+            },
+            {
+                title: 'Toward data assimilation of ship-induced aerosol–cloud interactions',
+                authors: 'L. Patel, L. Shand',
+                venue: 'Environmental Data Science, 1, e31',
+                year: 2022,
+                type: 'Journal',
+                url: 'https://www.cambridge.org/core/journals/environmental-data-science/article/toward-data-assimilation-of-shipinduced-aerosolcloud-interactions/FC4BFA2D09DC808B2DB4587F8263F3B6',
+            },
+            {
+                title: 'Local limits of detection for anthropogenic aerosol-cloud interactions',
+                authors: 'L. Shand, J.W. Foulk, A. Staid, E.L. Roesler, D. Lyons, K.M. Simonson, L. Patel, J.J. Hickey, S.D. Gray',
+                venue: 'Sandia National Laboratories',
+                year: 2021,
+                type: 'Tech report',
+                url: 'https://www.osti.gov/servlets/purl/1855009',
+            },
+        ],
+    },
+    {
+        title: '2. Simulation-Based Inference, Generative Modeling & Data Fusion',
+        entries: [
+            {
+                title: 'Reconstructing the Aerosol State from Partial Observations with Generative Modeling',
+                authors: 'E. Saleh, S. Ghaffari, J.H. Curtis, L. Patel, P.A. Bosler, N. Riemer, M. West',
+                venue: 'Preprint',
+                year: 2025,
+                type: 'Preprint',
+                url: 'https://arxiv.org/pdf/2511.14059',
+            },
+            {
+                title: 'Generative Modeling of Aerosol State Representations',
+                authors: 'E. Saleh, S. Ghaffari, J.H. Curtis, L. Patel, P.A. Bosler, N. Riemer, M. West',
+                venue: 'Preprint',
+                year: 2025,
+                type: 'Preprint',
+                url: 'https://arxiv.org/pdf/2510.10361',
+            },
+            {
+                title: 'Trust-Aware Multimodal Data Fusion for Yield Estimation: A Case Study of the 2020 Beirut Explosion',
+                authors: 'L. Patel, C. Ulmer, S.J. Verzi, D.J. Krofcheck, I. Manickam, A. Naugle, J. Ray',
+                venue: 'arXiv preprint arXiv:2511.16816',
+                year: 2025,
+                type: 'Preprint',
+                url: 'https://arxiv.org/pdf/2511.16816',
+            },
+            {
+                title: 'Improving and Assessing the Quality of Uncertainty Quantification in Deep Learning',
+                authors: 'J.R. Adams, R. Baiyasi, B. Berman, M.C. Darling, T. Ganter, J.J. Michalenko, L. Patel, D. Ries, F. Liang, C. Qian, K. Roy',
+                venue: 'Sandia National Laboratories',
+                year: 2023,
+                type: 'Tech report',
+                url: 'https://www.osti.gov/servlets/purl/2430273',
+            },
+            {
+                title: 'Deep Learning Aerosol-Cloud Interactions from Satellite Imagery',
+                authors: 'P. Warburton, K. Shuler, L. Patel',
+                venue: 'Proceedings of the AAAI Symposium Series, 2(1), 159–165',
+                year: 2023,
+                type: 'Conference',
+                url: 'https://ojs.aaai.org/index.php/AAAI-SS/article/view/27664/27437',
+            },
+        ],
+    },
+    {
+        title: '3. Sequential Models & Bayesian Filtering (HMMs, state-space, list-mode)',
+        subsections: [
+            {
+                subtitle: 'Microscopy / photo-switching',
+                entries: [
+                    {
+                        title: 'Blinking statistics and molecular counting in direct stochastic reconstruction microscopy (dSTORM)',
+                        authors: 'L. Patel, D. Williamson, D.M. Owen, E.A.K. Cohen',
+                        venue: 'Bioinformatics, 37(17), 2730–2737',
+                        year: 2021,
+                        type: 'Journal',
+                        url: 'https://academic.oup.com/bioinformatics/article/37/17/2730/6153970',
+                    },
+                    {
+                        title: 'A hidden Markov model approach to characterizing the photo-switching behavior of fluorophores',
+                        authors: 'L. Patel, N. Gustafsson, Y. Lin, R. Ober, R. Henriques, E.A.K. Cohen',
+                        venue: 'The Annals of Applied Statistics, 13(3), 1397–1429',
+                        year: 2019,
+                        type: 'Journal',
+                        url: 'https://projecteuclid.org/journals/annals-of-applied-statistics/volume-13/issue-3/A-hidden-Markov-model-approach-to-characterizing-the-photo-switching/10.1214/19-AOAS1240.full',
+                    },
+                    {
+                        title: 'Modelling and inference of spatio-temporal processes in Single Molecule Localisation Microscopy',
+                        authors: 'L. Patel',
+                        venue: 'PhD Thesis, Imperial College London',
+                        year: 2019,
+                        type: 'Thesis',
+                        url: '/Thesis_final_compressed.pdf',
+                    },
+                    {
+                        title: 'Bayesian filtering for spatial estimation of photo-switching fluorophores imaged in super-resolution fluorescence microscopy',
+                        authors: 'L. Patel, E.A.K. Cohen',
+                        venue: '52nd Asilomar Conference on Signals, Systems, and Computers, 1187–1191',
+                        year: 2018,
+                        type: 'Conference',
+                        url: 'https://ieeexplore.ieee.org/document/8645460/',
+                    },
                 ],
             },
             {
-                title: 'Convergence Analysis of Iterative Methods for Large-Scale Inverse Problems',
-                authors: 'L. Patel, R. Thompson',
-                venue: 'SIAM Journal on Scientific Computing, vol. 47, no. 1, pp. 89-112',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Code', url: '#' },
+                subtitle: 'Anomaly detection / cyber-physical security',
+                entries: [
+                    {
+                        title: 'Heterogeneous Time Series Anomaly Detection in Cyber-Physical Systems with VAEM-LSTMs',
+                        authors: 'L. Patel, S. Hossain-McKenzie',
+                        venue: 'IEEE International Conference on Machine Learning and Applications (ICMLA)',
+                        year: 2025,
+                        type: 'Conference',
+                        url: 'https://conferences.computer.org/icmlapub25/pdfs/ICMLA2025-4ubXnJyWd3Fugefo3XYLVQ/598000a253/598000a253.pdf',
+                    },
+                    {
+                        title: 'Classification of photovoltaic failures with hidden Markov modeling, an unsupervised statistical approach',
+                        authors: 'M.W. Hopwood, L. Patel, T. Gunda',
+                        venue: 'Energies, 15(14), 5104',
+                        year: 2022,
+                        type: 'Journal',
+                        url: 'https://www.mdpi.com/1996-1073/15/14/5104',
+                    },
+                ],
+            },
+            {
+                subtitle: 'Radiological sensing (list-mode temporal models)',
+                entries: [
+                    {
+                        title: 'Radioisotope Identification with List-Mode Gamma-Ray Data: Assessing the Value of Temporal Information Applied to Radioisotope Identification',
+                        authors: 'L. Patel, E.H. Gonzalez, R.J. Kamm, A.J. Hill',
+                        venue: 'IEEE Transactions on Nuclear Science',
+                        year: 2025,
+                        type: 'Journal',
+                        url: 'https://www.tandfonline.com/doi/full/10.1080/26941899.2025.2597582?af=R',
+                    },
                 ],
             },
         ],
     },
     {
-        year: 2024,
+        title: '4. Point Processes & Extremes (Hawkes, EVT, spatiotemporal events)',
         entries: [
             {
-                title: 'Efficient Signal Recovery from Noisy Measurements Using Sparse Representations',
-                authors: 'L. Patel, J. Nakamura, S. Gupta',
-                venue: 'IEEE Transactions on Signal Processing, vol. 72, pp. 1540-1555',
-                links: [
-                    { label: 'Paper', url: '#' },
-                ],
+                title: 'Parameter estimation of binned Hawkes processes',
+                authors: 'L. Shlomovich, E.A.K. Cohen, N. Adams, L. Patel',
+                venue: 'Journal of Computational and Graphical Statistics, 31(4), 990–1000',
+                year: 2022,
+                type: 'Journal',
+                url: 'https://www.tandfonline.com/doi/full/10.1080/10618600.2022.2050247',
             },
             {
-                title: 'Adaptive Mesh Refinement for Nonlinear Partial Differential Equations',
-                authors: 'L. Patel, D. Wilson',
-                venue: 'Proceedings of the International Conference on Computational Methods (ICCM 2024), pp. 102-117',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Slides', url: '#' },
-                ],
+                title: 'Spatio-temporal extreme event modeling of terror insurgencies',
+                authors: 'L. Patel, L. Shand, J.D. Tucker, G. Huerta',
+                venue: 'arXiv preprint arXiv:2110.08363',
+                year: 2021,
+                type: 'Preprint',
+                url: 'https://arxiv.org/pdf/2110.08363',
             },
             {
-                title: 'A Bayesian Approach to Uncertainty Quantification in Physical Simulations',
-                authors: 'M. Chen, L. Patel',
-                venue: 'Journal of Computational Physics, vol. 501, 112782',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Preprint', url: '#' },
-                    { label: 'Code', url: '#' },
-                ],
+                title: 'Assessing Extreme Value Analysis to predict rare events from the Global Terrorism Database',
+                authors: 'L. Patel, L. Shand, J.D. Tucker, G. Huerta',
+                venue: 'JSM Proceedings, Section on Statistics in Defense and National Security, American Statistical Association',
+                year: 2020,
+                type: 'Conference',
+                url: 'https://ww2.amstat.org/meetings/proceedings/2020/data/assets/pdf/1505432.pdf',
             },
         ],
     },
     {
-        year: 2023,
+        title: '5. Graphs, Networks & Geometric Representation Learning',
         entries: [
             {
-                title: 'Deep Learning for Accelerated Numerical Simulation of Fluid Dynamics',
-                authors: 'L. Patel, A. Kumar',
-                venue: 'NeurIPS 2023 Workshop on Machine Learning and the Physical Sciences',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Poster', url: '#' },
-                ],
+                title: 'Simultaneous global and local clustering in multiplex networks with covariate information',
+                authors: 'J. Corneck, E.A.K. Cohen, J.S. Martin, L. Patel, K.W. Shuler, F. Sanna Passino',
+                venue: 'Journal of Complex Networks, 14(1), cnaf049',
+                year: 2026,
+                type: 'Journal',
+                url: 'https://academic.oup.com/comnet/article/14/1/cnaf049/8441056?login=true',
             },
             {
-                title: 'Randomized Algorithms for Low-Rank Matrix Approximation: Theory and Practice',
-                authors: 'L. Patel',
-                venue: 'Linear Algebra and its Applications, vol. 678, pp. 45-72',
-                links: [
-                    { label: 'Paper', url: '#' },
-                ],
+                title: 'Joint Modeling of Temporally Evolving Multiplex Graphs and Nodal Attributes Using Neural Gaussian Processes: Insights from Terrorism Network Analysis',
+                authors: 'J. Rodriguez-Acosta, S. Guha, L. Patel, K. Shuler',
+                venue: 'Preprint',
+                year: 2025,
+                type: 'Preprint',
+                url: 'https://oaktrust.library.tamu.edu/server/api/core/bitstreams/6f3cba54-b1ef-4f23-9d2d-ef190b96b5bf/content',
+            },
+            {
+                title: 'Templates for Risk Informed Assurance with Curvature Embeddings (TRACE)',
+                authors: 'L. Patel et al.',
+                venue: 'Sandia National Laboratories',
+                year: 2025,
+                type: 'Tech report',
+                url: 'https://www.osti.gov/servlets/purl/2997317',
             },
         ],
     },
     {
-        year: 2022,
+        title: '6. Statistical Theory & Bayesian Nonparametrics',
         entries: [
             {
-                title: 'Compressed Sensing with Structured Random Matrices',
-                authors: 'L. Patel, R. Thompson, J. Nakamura',
-                venue: 'Applied and Computational Harmonic Analysis, vol. 58, pp. 134-162',
-                links: [
-                    { label: 'Paper', url: '#' },
-                    { label: 'Code', url: '#' },
-                ],
+                title: 'Minimax Posterior Contraction Rates for Unconstrained Distribution Estimation under Wasserstein Distance',
+                authors: 'P.M. Jacobs, L. Patel, A. Bhattacharya, D. Pati',
+                venue: 'Transactions on Machine Learning Research (TMLR)',
+                year: 2025,
+                type: 'Journal',
+                url: 'https://openreview.net/pdf?id=UrSgGSTM2J',
             },
             {
-                title: 'Optimization Methods for Inverse Problems in Imaging',
-                authors: 'L. Patel, S. Gupta',
-                venue: 'Inverse Problems, vol. 38, no. 7, 075001',
-                links: [
-                    { label: 'Paper', url: '#' },
-                ],
+                title: 'Estimation of Large Zipfian Distributions with Sort and Snap',
+                authors: 'P.M. Jacobs, A. Bhattacharya, D. Pati, L. Patel, J.M. Phillips',
+                venue: 'Proceedings of The 28th International Conference on Artificial Intelligence and Statistics (AISTATS), PMLR 258, 190–198',
+                year: 2025,
+                type: 'Conference',
+                url: 'https://raw.githubusercontent.com/mlresearch/v258/main/assets/jacobs25a/jacobs25a.pdf',
+            },
+            {
+                title: 'Memory efficient and minimax distribution estimation under Wasserstein distance using Bayesian histograms',
+                authors: 'P.M. Jacobs, L. Patel, A. Bhattacharya, D. Pati',
+                venue: 'arXiv preprint arXiv:2307.10099',
+                year: 2023,
+                type: 'Preprint',
+                url: 'https://arxiv.org/abs/2307.10099',
+            },
+        ],
+    },
+    {
+        title: '7. Atmospheric Measurement & Experimental Platforms',
+        entries: [
+            {
+                title: 'Influence of NaCl concentration on the optical scattering properties of water-based aerosols',
+                authors: 'C.A. Pattyn, J.B. Wright, J.W. Foulk, B.J. Redman, J.D. Vanderlaan, A. Glen, A.L. Sanchez, K. Westlake, L. Patel, B.Z. Bentz',
+                venue: 'Applied Optics, 62(20), 5571–5579',
+                year: 2023,
+                type: 'Journal',
+                url: 'https://opg.optica.org/ao/fulltext.cfm?uri=ao-62-20-5571',
+            },
+            {
+                title: 'Development and characterization of a tabletop fog chamber at Sandia National Laboratories',
+                authors: 'C.A. Pattyn, J. Zenker, E. Deneke, L. Patel, B.J. Redman, J.D. van der Laan, R.L. Hastings, D.W. Alexander, K.J. Webb, A. Glen, A.L. Sanchez, K. Westlake, B.Z. Bentz, J.B. Wright',
+                venue: 'Proc. SPIE 12125, Virtual, Augmented, and Mixed Reality (XR) Technology for Multi-Domain Operations III, 121250A',
+                year: 2022,
+                type: 'Conference',
+                url: 'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12125/2618838/Development-and-characterization-of-a-tabletop-fog-chamber-at-Sandia/10.1117/12.2618838.full',
+            },
+        ],
+    },
+    {
+        title: '8. Environmental Monitoring & Sensing Network Design',
+        entries: [
+            {
+                title: 'Assessing the design of integrated methane sensing networks',
+                authors: 'L. Patel, J.P. Zenker',
+                venue: 'Environmental Research Letters, 19(12)',
+                year: 2024,
+                type: 'Journal',
+                url: 'https://iopscience.iop.org/article/10.1088/1748-9326/ad893d',
+            },
+            {
+                title: 'Methane Integrated Monitoring and Measurement System Design',
+                authors: 'J.P. Zenker, L. Patel, A. Lilje et al.',
+                venue: 'Sandia National Laboratories',
+                year: 2024,
+                type: 'Tech report',
+                url: 'https://www.osti.gov/servlets/purl/2480126',
+            },
+        ],
+    },
+    {
+        title: '9. Software & Data Products',
+        entries: [
+            {
+                title: 'TChem-atm (v2.0.0): scalable performance-portable multiphase atmospheric chemistry',
+                authors: 'O.H. Diaz-Ibarra, S.G. Frederick, J.H. Curtis, Z. D\'Aquino, P.A. Bosler, L. Patel, C. Safta, M. West, N. Riemer',
+                venue: 'Geoscientific Model Development, 19, 1281–1299',
+                year: 2026,
+                type: 'Journal',
+                url: 'https://gmd.copernicus.org/articles/19/1281/2026/',
+            },
+            {
+                title: 'Image masks of global ship tracks for NASA MODIS data products',
+                authors: 'P. Warburton, K. Shuler, J.P. Zenker, L. Patel',
+                venue: 'Scientific Data, 12(1), 1060',
+                year: 2025,
+                type: 'Dataset',
+                url: 'https://www.nature.com/articles/s41597-025-04911-2',
             },
         ],
     },
 ];
+
+const typeColors: Record<string, string> = {
+    Journal: 'bg-blue-100 text-blue-800 border-blue-200',
+    Preprint: 'bg-amber-100 text-amber-800 border-amber-200',
+    Conference: 'bg-green-100 text-green-800 border-green-200',
+    'Tech report': 'bg-gray-100 text-gray-700 border-gray-200',
+    Thesis: 'bg-purple-100 text-purple-800 border-purple-200',
+    Dataset: 'bg-teal-100 text-teal-800 border-teal-200',
+};
 ---
 
-<Layout title="Publications" description="Selected publications by Lekha Patel.">
+<Layout title="Publications" description="Publications by Lekha Patel, organized by research theme.">
     <h1 class="mb-4">Publications</h1>
     <p class="text-text-muted mb-10">
-        Below is a selected list of publications. For a complete list, please visit my
-        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile.
+        Publications organized by research theme. For a complete list, please visit my
+        <a href="https://scholar.google.com/citations?user=ZKS9dtkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile.
     </p>
 
-    {publications.map((group) => (
-        <section class="mb-10">
-            <h2 class="text-xl font-bold text-accent mb-4 flex items-center gap-3">
-                <span>{group.year}</span>
-                <span class="h-px bg-border grow"></span>
+    {sections.map((section) => (
+        <section class="mb-12">
+            <h2 class="text-xl font-bold text-primary mb-6 pb-2 border-b-2 border-accent">
+                {section.title}
             </h2>
-            <div>
-                {group.entries.map((pub) => (
-                    <div class="pub-entry">
-                        <p class="pub-title">{pub.title}</p>
-                        <p class="pub-authors">{pub.authors}</p>
-                        <p class="pub-venue">{pub.venue}</p>
-                        {pub.links && pub.links.length > 0 && (
-                            <div class="pub-links">
-                                {pub.links.map((link) => (
-                                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                        [{link.label}]
-                                    </a>
-                                ))}
+
+            {'entries' in section && section.entries && (
+                <div>
+                    {section.entries.map((pub) => (
+                        <div class="pub-entry">
+                            <div class="flex items-start justify-between gap-3">
+                                <p class="pub-title">
+                                    {'url' in pub && pub.url ? (
+                                        <a href={pub.url} target="_blank" rel="noopener noreferrer">{pub.title}</a>
+                                    ) : (
+                                        pub.title
+                                    )}
+                                </p>
+                                <div class="flex items-center gap-2 shrink-0 mt-0.5">
+                                    <span class="text-xs font-medium text-text-muted">{pub.year}</span>
+                                    <span class={`inline-block text-xs font-medium px-2 py-0.5 rounded-full border ${typeColors[pub.type] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                                        {pub.type}
+                                    </span>
+                                </div>
                             </div>
-                        )}
+                            <p class="pub-authors">{pub.authors}</p>
+                            <p class="pub-venue">{pub.venue}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {'subsections' in section && section.subsections && section.subsections.map((sub) => (
+                <div class="mb-8">
+                    <h3 class="text-base font-semibold text-accent mb-3 mt-4 italic">{sub.subtitle}</h3>
+                    <div>
+                        {sub.entries.map((pub) => (
+                            <div class="pub-entry">
+                                <div class="flex items-start justify-between gap-3">
+                                    <p class="pub-title">
+                                        {'url' in pub && pub.url ? (
+                                            <a href={pub.url} target="_blank" rel="noopener noreferrer">{pub.title}</a>
+                                        ) : (
+                                            pub.title
+                                        )}
+                                    </p>
+                                    <div class="flex items-center gap-2 shrink-0 mt-0.5">
+                                        <span class="text-xs font-medium text-text-muted">{pub.year}</span>
+                                        <span class={`inline-block text-xs font-medium px-2 py-0.5 rounded-full border ${typeColors[pub.type] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                                            {pub.type}
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="pub-authors">{pub.authors}</p>
+                                <p class="pub-venue">{pub.venue}</p>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </section>
     ))}
 </Layout>
