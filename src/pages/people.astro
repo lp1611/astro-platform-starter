@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const currentStudents = [
+    {
+        name: 'Elyas Saleh',
+        role: 'PhD Student',
+        institution: 'University of Illinois Urbana-Champaign',
+        topic: 'Generative modeling of aerosol state representations',
+    },
+    {
+        name: 'Soroush Ghaffari',
+        role: 'PhD Student',
+        institution: 'University of Illinois Urbana-Champaign',
+        topic: 'Generative modeling and aerosol data reconstruction',
+    },
+    {
+        name: 'Jose Rodriguez-Acosta',
+        role: 'PhD Student',
+        institution: 'Texas A&M University',
+        topic: 'Temporal multiplex graph modeling with neural Gaussian processes',
+    },
+    {
+        name: 'James Corneck',
+        role: 'PhD Student',
+        institution: 'Imperial College London',
+        topic: 'Clustering in multiplex networks with covariate information',
+    },
+    {
+        name: 'Sakeena Mokhtar',
+        role: 'Student Intern',
+        institution: 'Sandia National Laboratories',
+        topic: 'Copula-based anomaly detection for dependent multi-sensor systems',
+    },
+    {
+        name: 'Daniel McGeehan',
+        role: 'Student Intern',
+        institution: 'Sandia National Laboratories',
+        topic: 'Cyber intrusion detection under computational constraints',
+    },
+    {
+        name: 'Faith Christensen',
+        role: 'Student Intern',
+        institution: 'Sandia National Laboratories',
+        topic: 'Preference elicitation for multi-criteria decision analysis in cybersecurity',
+    },
+];
+
+const pastStudents = [
+    {
+        name: 'Philip Warburton',
+        role: 'Former Student Intern',
+        institution: 'Sandia National Laboratories',
+        topic: 'Deep learning for aerosol-cloud interactions from satellite imagery',
+    },
+    {
+        name: 'Kyle Shuler',
+        role: 'Former Postdoc',
+        institution: 'Sandia National Laboratories',
+        topic: 'Feature selection, network analysis, and ship track detection',
+    },
+    {
+        name: 'Matthew Hopwood',
+        role: 'Former Student Intern',
+        institution: 'Sandia National Laboratories',
+        topic: 'Hidden Markov modeling for photovoltaic failure classification',
+    },
+];
+
+const collaborators = [
+    {
+        name: 'E.A.K. Cohen',
+        institution: 'Imperial College London',
+        area: 'Stochastic processes, single molecule localization microscopy, network analysis',
+    },
+    {
+        name: 'Matthew West',
+        institution: 'University of Illinois Urbana-Champaign',
+        area: 'Aerosol particle modeling, simulation-based inference',
+    },
+    {
+        name: 'Nicole Riemer',
+        institution: 'University of Illinois Urbana-Champaign',
+        area: 'Atmospheric science, aerosol chemistry',
+    },
+    {
+        name: 'P. Michael Jacobs',
+        institution: 'Sandia National Laboratories',
+        area: 'Statistical theory, distribution estimation, molecular counting',
+    },
+    {
+        name: 'Lyndsay Shand',
+        institution: 'Sandia National Laboratories',
+        area: 'Spatiotemporal statistics, data assimilation, extreme event modeling',
+    },
+    {
+        name: 'Shamina Hossain-McKenzie',
+        institution: 'Sandia National Laboratories',
+        area: 'Cyber-physical systems, digital twins, anomaly detection',
+    },
+    {
+        name: 'Jeffrey Curtis',
+        institution: 'University of Illinois Urbana-Champaign',
+        area: 'Aerosol particle modeling, atmospheric chemistry software',
+    },
+    {
+        name: 'Peter Bosler',
+        institution: 'Sandia National Laboratories',
+        area: 'Scientific computing, atmospheric modeling',
+    },
+    {
+        name: 'Lucas McMichael',
+        institution: 'Sandia National Laboratories',
+        area: 'Physics-informed particle parameterization, ship tracks',
+    },
+    {
+        name: 'Matt Schmidt',
+        institution: 'Sandia National Laboratories',
+        area: 'Stochastic modeling, ship track spreading',
+    },
+    {
+        name: 'Justin Zenker',
+        institution: 'Sandia National Laboratories',
+        area: 'Environmental monitoring, methane sensing network design',
+    },
+    {
+        name: 'Jarom Ray',
+        institution: 'Sandia National Laboratories',
+        area: 'Multimodal data fusion, yield estimation',
+    },
+    {
+        name: 'Chris Ulmer',
+        institution: 'Sandia National Laboratories',
+        area: 'Data fusion, blast damage assessment',
+    },
+    {
+        name: 'Subhadeep Guha',
+        institution: 'Texas A&M University',
+        area: 'Bayesian methods, network modeling',
+    },
+    {
+        name: 'Federico Sanna Passino',
+        institution: 'Imperial College London',
+        area: 'Network clustering, multiplex networks',
+    },
+    {
+        name: 'Anirban Bhattacharya',
+        institution: 'Texas A&M University',
+        area: 'Bayesian nonparametrics, distribution estimation',
+    },
+    {
+        name: 'Debdeep Pati',
+        institution: 'Texas A&M University',
+        area: 'Bayesian nonparametrics, posterior contraction rates',
+    },
+    {
+        name: 'Rob Wood',
+        institution: 'University of Washington',
+        area: 'Atmospheric science, cloud physics, ship tracks',
+    },
+    {
+        name: 'Chris Pattyn',
+        institution: 'Sandia National Laboratories',
+        area: 'Experimental aerosol science, fog chamber development',
+    },
+    {
+        name: 'Josh Wright',
+        institution: 'Sandia National Laboratories',
+        area: 'Experimental optics, aerosol characterization',
+    },
+    {
+        name: 'Luis Damiano',
+        institution: 'Sandia National Laboratories',
+        area: 'Hidden Markov models, sequential inference',
+    },
+];
+---
+
+<Layout title="People" description="Students, mentees, and collaborators of Lekha Patel.">
+    <h1 class="mb-4">People</h1>
+    <p class="text-text-muted mb-10">
+        Current and former students, mentees, and research collaborators.
+    </p>
+
+    <!-- Current Students & Mentees -->
+    <section class="mb-12">
+        <h2 class="section-heading">Current Students &amp; Mentees</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {currentStudents.map((person) => (
+                <div class="card">
+                    <h3 class="text-lg mb-1">{person.name}</h3>
+                    <p class="text-sm font-medium text-accent mb-1">{person.role}</p>
+                    <p class="text-sm text-text-muted mb-2">{person.institution}</p>
+                    <p class="text-sm text-text leading-relaxed">{person.topic}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Past Students & Mentees -->
+    <section class="mb-12">
+        <h2 class="section-heading">Past Students &amp; Mentees</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {pastStudents.map((person) => (
+                <div class="card">
+                    <h3 class="text-lg mb-1">{person.name}</h3>
+                    <p class="text-sm font-medium text-accent mb-1">{person.role}</p>
+                    <p class="text-sm text-text-muted mb-2">{person.institution}</p>
+                    <p class="text-sm text-text leading-relaxed">{person.topic}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Collaborators -->
+    <section class="mb-12">
+        <h2 class="section-heading">Collaborators</h2>
+        <div class="space-y-3">
+            {collaborators.map((person) => (
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 py-3 border-b border-border last:border-b-0">
+                    <div class="sm:w-1/3">
+                        <p class="font-semibold text-text">{person.name}</p>
+                        <p class="text-sm text-text-muted">{person.institution}</p>
+                    </div>
+                    <p class="text-sm text-text-muted sm:w-2/3">{person.area}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+</Layout>
