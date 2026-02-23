@@ -3,67 +3,80 @@ import Layout from '../layouts/Layout.astro';
 
 const currentStudents = [
     {
-        name: 'Elyas Saleh',
-        role: 'PhD Student',
-        institution: 'University of Illinois Urbana-Champaign',
-        topic: 'Generative modeling of aerosol state representations',
+        name: 'Georgia Smits',
+        role: 'Postdoc',
+        institution: 'University of Washington',
+        topic: 'Streaming rashomon sets for online change-point detection',
     },
     {
-        name: 'Soroush Ghaffari',
-        role: 'PhD Student',
-        institution: 'University of Illinois Urbana-Champaign',
-        topic: 'Generative modeling and aerosol data reconstruction',
+        name: 'Garrett Allen',
+        role: 'PhD student',
+        institution: 'University of Washington',
+        topic: 'Streaming anomaly detection in cyber networks',
     },
     {
-        name: 'Jose Rodriguez-Acosta',
-        role: 'PhD Student',
-        institution: 'Texas A&M University',
-        topic: 'Temporal multiplex graph modeling with neural Gaussian processes',
+        name: 'Jorge Salinas',
+        role: 'Postdoc',
+        institution: 'Sandia National Laboratories',
+        topic: 'Stochastic differential surrogate modeling for stratospheric aerosol injection (SAI)',
     },
     {
-        name: 'James Corneck',
+        name: 'Erin Schwertner-Watson',
+        role: 'PhD Student',
+        institution: 'University of New Mexico',
+        topic: 'Feature engineering and Bayesian Optimization',
+    },
+    {
+        name: 'Sina Mokhtar',
+        role: 'PhD Student',
+        institution: 'University of New Mexico',
+        topic: 'Copula-based time series anomaly detection',
+    },
+    {
+        name: 'Joshua Corneck',
         role: 'PhD Student',
         institution: 'Imperial College London',
         topic: 'Clustering in multiplex networks with covariate information',
     },
-    {
-        name: 'Sakeena Mokhtar',
-        role: 'Student Intern',
-        institution: 'Sandia National Laboratories',
-        topic: 'Copula-based anomaly detection for dependent multi-sensor systems',
-    },
-    {
-        name: 'Daniel McGeehan',
-        role: 'Student Intern',
-        institution: 'Sandia National Laboratories',
-        topic: 'Cyber intrusion detection under computational constraints',
-    },
-    {
-        name: 'Faith Christensen',
-        role: 'Student Intern',
-        institution: 'Sandia National Laboratories',
-        topic: 'Preference elicitation for multi-criteria decision analysis in cybersecurity',
-    },
+
 ];
 
 const pastStudents = [
+        {
+            name: 'Michael Schmidt',
+            role: 'Former postdoc',
+            institution: 'Sandia National Laboratories/University of Utah',
+            topic: 'Particle methods for aerosol injection simulation',
+        },
     {
-        name: 'Philip Warburton',
-        role: 'Former Student Intern',
-        institution: 'Sandia National Laboratories',
-        topic: 'Deep learning for aerosol-cloud interactions from satellite imagery',
+        name: 'Jason Torchinsky',
+        role: 'Sandia Intern',
+        institution: 'Sandia National Laboratories/University of Utah',
+        topic: 'Kalman filtering for solving supersaturation of plume injections',
     },
     {
-        name: 'Kyle Shuler',
-        role: 'Former Postdoc',
+        name: 'Peter M. Jacobs',
+        role: 'Former Student Intern and PhD student',
+        institution: 'Sandia National Laboratories/University of Utah',
+        topic: 'Statistical theory',
+    },
+    {
+        name: 'Pierce Warburon',
+        role: 'Former Student Intern',
         institution: 'Sandia National Laboratories',
-        topic: 'Feature selection, network analysis, and ship track detection',
+        topic: 'Image processing, Machine Learning',
     },
     {
         name: 'Matthew Hopwood',
         role: 'Former Student Intern',
         institution: 'Sandia National Laboratories',
         topic: 'Hidden Markov modeling for photovoltaic failure classification',
+    },
+    {
+        name: 'Elad Mazor',
+        role: 'Former MSc student',
+        institution: 'Imperial College London',
+        topic: 'Machine Learning for superresolution microscopy',
     },
 ];
 
@@ -84,29 +97,14 @@ const collaborators = [
         area: 'Atmospheric science, aerosol chemistry',
     },
     {
-        name: 'P. Michael Jacobs',
-        institution: 'Sandia National Laboratories',
+        name: 'Peter M. Jacobs',
+        institution: 'University of Wisconsin-Madison',
         area: 'Statistical theory, distribution estimation, molecular counting',
-    },
-    {
-        name: 'Lyndsay Shand',
-        institution: 'Sandia National Laboratories',
-        area: 'Spatiotemporal statistics, data assimilation, extreme event modeling',
-    },
-    {
-        name: 'Shamina Hossain-McKenzie',
-        institution: 'Sandia National Laboratories',
-        area: 'Cyber-physical systems, digital twins, anomaly detection',
     },
     {
         name: 'Jeffrey Curtis',
         institution: 'University of Illinois Urbana-Champaign',
         area: 'Aerosol particle modeling, atmospheric chemistry software',
-    },
-    {
-        name: 'Peter Bosler',
-        institution: 'Sandia National Laboratories',
-        area: 'Scientific computing, atmospheric modeling',
     },
     {
         name: 'Lucas McMichael',
@@ -134,7 +132,7 @@ const collaborators = [
         area: 'Data fusion, blast damage assessment',
     },
     {
-        name: 'Subhadeep Guha',
+        name: 'Sharmi Guha',
         institution: 'Texas A&M University',
         area: 'Bayesian methods, network modeling',
     },
